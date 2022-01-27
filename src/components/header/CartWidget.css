@@ -1,0 +1,11 @@
+.cart-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartImg{
+    width: 32px;
+    height: 32px;
+    margin-right: 2px;
+}
