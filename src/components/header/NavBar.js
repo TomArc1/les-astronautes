@@ -1,7 +1,7 @@
 import React from 'react';
 import './NavBar.css';
 import logoprovisional from '../../assets/imgs/logoprovisional.jpeg';
-import CartWidget from './CartWidget'
+import CartWidget from './CartWidget';
 
 const NavBar = () =>{
     return (
@@ -20,7 +20,6 @@ const NavBar = () =>{
                 <div className='bar'></div>
                 <div className='bar'></div>
             </div> */}
-            {CartWidget}
         </header>
 
 
