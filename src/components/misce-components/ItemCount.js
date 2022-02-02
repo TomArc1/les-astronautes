@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './ItemCount.css';
-import vinoimg from '../../assets/imgs/imgvinoprueba.png';
 import plus from '../../assets/svgs/plus.svg';
 import minus from '../../assets/svgs/minus.svg';
 
@@ -19,8 +18,6 @@ const ItemCount = ({ stock, initial, onAdd }) =>{
 
     return(
         <div className='cardProduct'>
-            <img src={vinoimg} alt='vino imagen prueba' className='imgvinoprueba' />
-            <p>Un vinito</p>
             <div className='cardProduct__inner' >
                 <button onClick={subtractUnit}>
                     <img src={minus} className='minus' />

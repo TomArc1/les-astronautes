@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/header/NavBar'
-import ItemListContainer from './components/header/ItemListContainer'
+import NavBar from './components/header/NavBar/NavBar';
+import ItemListContainer from './components/item-components/ItemListContainer/ItemListContainer';
 
 const App = ()=> {
   return (
@@ -9,7 +8,7 @@ const App = ()=> {
         <header>
           <NavBar />
         </header>
-        <ItemListContainer greeting = ' Vino Torrontes 750ml' />
+        <ItemListContainer greeting = 'Vinos más allá de este mundo' />
     </div>
   );
 }
