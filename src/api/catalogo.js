@@ -1,4 +1,3 @@
-
 const catalogo = [
     {
         id:101,
@@ -6,7 +5,7 @@ const catalogo = [
         blend: 'Malbec',
         description: 'Vino tinto malbec 750ml.',
         price: 850,
-        img: './assets/imgs/imgvinoprueba.png'
+        img: './images/imgvinoprueba.png'
     },
     {
         id:102,
@@ -14,15 +13,16 @@ const catalogo = [
         blend: 'Torrontes',
         description: 'Vino blanco torrontes 750ml.',
         price: 850,
-        img: './assets/imgs/imgvinoprueba.png'
+        img: './images/imgvinoprueba.png'
+        // img: '../assets/imgs/vinotorrontes.jpeg'
     },
     {
-        id:101,
+        id:103,
         name: 'Tierra',
         blend: 'Cavernet Souvignon',
         description: 'Vino tinton cabernet souvignon 750ml.',
         price: 850,
-        img: './assets/imgs/imgvinoprueba.png'
+        img: './images/imgvinoprueba.png'
     }
 ];
 
