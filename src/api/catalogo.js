@@ -4,6 +4,7 @@ const catalogo = [
         name: 'Mercurio',
         blend: 'Malbec',
         description: 'Vino tinto malbec 750ml.',
+        description2: 'Vino tinto malbec 750ml. Cosecha 2021, Valle de Uco, Mendoza.',
         price: 850,
         img: './images/imgvinoprueba.png'
     },
@@ -27,10 +28,10 @@ const catalogo = [
 ];
 
 
-const invocarCatalogo = new Promise ((res, rej)=>{
+const getItems = new Promise ((res, rej)=>{
     setTimeout(()=>{
         res(catalogo)
     }, 3000)
 });
 
-export default invocarCatalogo;
+export default getItems;

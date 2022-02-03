@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './ItemListContainer.css';
 import ItemCount from "../../misce-components/ItemCount";
-import invocarCatalogo from "../../../api/catalogo";
+import getItems from "../../../api/catalogo";
 import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = ({ greeting }) => {
@@ -9,7 +9,7 @@ const ItemListContainer = ({ greeting }) => {
     const [loader, setLoader] = useState(true);
 
     useEffect(()=>{
-        invocarCatalogo
+        getItems
         .then((res)=>{
             setCatalogue(res);
         })
@@ -18,10 +18,7 @@ const ItemListContainer = ({ greeting }) => {
         })
     },[] )
 
-    console.log(catalogue)
-
     const agregarItems = () =>{console.log('Productos agregados!!');}
-
 
     return(
         <div>
