@@ -3,22 +3,29 @@ import './ItemListContainer.css';
 import ItemCount from "../../misce-components/ItemCount";
 import getItems from "../../../api/catalogo";
 import ItemList from '../ItemList/ItemList'
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({ greeting }) => {
     const [catalogue, setCatalogue] = useState([]);
     const [loader, setLoader] = useState(true);
+    const { prodCat } = useParams()
 
     useEffect(()=>{
         getItems
         .then((res)=>{
-            setCatalogue(res);
+            if(!prodCat){
+                setCatalogue(res);
+            }
+            else{
+                const categoyProducts = res.filter ((prod)=> prod.category === prodCat )
+                setCatalogue(categoyProducts);
+            }  
         })
         .finally(()=>{
             setLoader(false)
         })
-    },[] )
+    },[ prodCat ] )
 
-    const agregarItems = () =>{console.log('Productos agregados!!');}
 
     return(
         <div>
@@ -26,7 +33,6 @@ const ItemListContainer = ({ greeting }) => {
             <div>
                 {(loader) ? (<h2>Cargando...</h2>) : (<ItemList items={catalogue}/>) }
             </div>
-            <ItemCount stock={5} initial={1} onAdd={agregarItems} />
         </div>
     )
 }

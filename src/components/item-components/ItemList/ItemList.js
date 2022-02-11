@@ -4,7 +4,6 @@ import Item from '../Item/Item';
 
 
 const ItemList = ( {items} ) =>{
-    console.log(items);
     return(
         <div className="lista">
             {items.map((item)=>{

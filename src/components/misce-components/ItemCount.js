@@ -4,16 +4,14 @@ import plus from '../../assets/svgs/plus.svg';
 import minus from '../../assets/svgs/minus.svg';
 
 const ItemCount = ({ stock, initial, onAdd }) =>{
-    const [amount, setAmount] = useState(initial)
+    const [amountToCart, setAmountToCart] = useState(initial)
 
-    const addUnit = () => setAmount( amount + 1);
+    const addUnit = () => (amountToCart < stock) && setAmountToCart( amountToCart + 1);
+    const subtractUnit = () =>(amountToCart > 1) && setAmountToCart( amountToCart - 1 );
 
-    const subtractUnit = () =>(amount >= 1) && setAmount( amount - 1 );
-
-    const verificacionStock = () =>{
-        (amount > stock) && console.log(`La cantidad excede el stock. Stock máximo: ${(stock)}`);
-        (amount === 0) && console.log('No está agregando productos al carrito');
-        (amount <= stock && amount > 0) && onAdd();
+    const addToCart = () => {
+        onAdd(amountToCart);
+        console.log(amountToCart)
     }
 
     return(
@@ -22,14 +20,28 @@ const ItemCount = ({ stock, initial, onAdd }) =>{
                 <button onClick={subtractUnit}>
                     <img src={minus} className='minus' />
                 </button>
-                <input type="text" onChange={setAmount} value={amount} className='cardProduct__inner-input' />
+                <input type="text" onChange={setAmountToCart} value={amountToCart} className='cardProduct__inner-input' />
                 <button onClick={addUnit}>
                     <img src={plus} className='plus' />
                 </button>
             </div>
-            <button className='btnAdd' onClick={verificacionStock}>Agregar al carrito</button>
+            <button className='btnAdd' onClick={addToCart}>Agregar al carrito</button>
         </div>
     )
 };
 
 export default ItemCount;
+
+
+
+
+
+
+
+
+
+    // const verificacionStock = () =>{
+    //     (amount > stock) && console.log(`La cantidad excede el stock. Stock máximo: ${(stock)}`);
+    //     (amount === 0) && console.log('No está agregando productos al carrito');
+    //     (amount <= stock && amount > 0) && onAdd();
+    // }
