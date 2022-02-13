@@ -5,4 +5,5 @@ El proyecto presente responde al trabajo de cursada sobre la librería React JS 
     https://www.instagram.com/astronauteswines/?hl=es
     https://linktr.ee/Astronauteswines
 
-    ![MuestraGig](public/gifdeprueba.gif)
+
+![gif](public/gifdeprueba.gif)
