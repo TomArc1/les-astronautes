@@ -1,4 +1,4 @@
-.cardProduct{
+.cardCounter{
     width: 250px;
     padding: 10px;
     border: 1px solid black;
@@ -7,11 +7,8 @@
     align-items: center;
 }
 
-.imgvinoprueba{
-    width: 100%;
-}
 
-.cardProduct__inner{
+.cardCounter__inner{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,8 +16,20 @@
 }
 
 .cardProduct__inner-input{
+    width: 30px;
+    height: 25px;
+    text-align: center;
+    margin: 0 10px 0 10px;
+}
+
+.cardCounter__inner-btn{
     width: 25px;
     height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardCounter__inner-btnAdd{
     padding: 5px;
-    margin: 0 10px 0 10px;
 }

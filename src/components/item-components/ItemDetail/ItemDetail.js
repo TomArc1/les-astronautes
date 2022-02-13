@@ -9,21 +9,20 @@ const ItemDetail = ( { item } ) =>{
 
     
     const onAddUnits = (amountToCart) => {
-        console.log(amountToCart)
+        console.log(`Items agregados al carrito: ${amountToCart}`)
         setAmount(amountToCart);
-        console.log(amount)
     }
 
     return(
-        <div>
-            <div>
+        <div className="itemdetailcard">
+            <div className="itemdetail__img-c">
                 <img src={item.img} className="imgdetail"/>
             </div>
-            <div>
-                <h1>{item.name}</h1>
-                <p>{item.blend}</p>
-                <p>{item.description2}</p>
-                <p>${item.price}</p> 
+            <div className="itemdetail__info">
+                <h1 className="itemdetail__info-h1">{item.name}</h1>
+                <p className="itemdetail__info-p1">{item.blend}</p>
+                <p className="itemdetail__info-p2">{item.description2}</p>
+                <p className="itemdetail__info-p3">${item.price}</p> 
                 {
                     (!amount) ?
                     <ItemCount stock={5} initial={1} onAdd={onAddUnits} />

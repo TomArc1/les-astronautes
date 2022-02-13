@@ -11,21 +11,20 @@ const ItemCount = ({ stock, initial, onAdd }) =>{
 
     const addToCart = () => {
         onAdd(amountToCart);
-        console.log(amountToCart)
     }
 
     return(
-        <div className='cardProduct'>
-            <div className='cardProduct__inner' >
-                <button onClick={subtractUnit}>
+        <div className='cardCounter'>
+            <div className='cardCounter__inner' >
+                <button onClick={subtractUnit} className='cardCounter__inner-btn'>
                     <img src={minus} className='minus' />
                 </button>
                 <input type="text" onChange={setAmountToCart} value={amountToCart} className='cardProduct__inner-input' />
-                <button onClick={addUnit}>
+                <button onClick={addUnit} className='cardCounter__inner-btn'>
                     <img src={plus} className='plus' />
                 </button>
             </div>
-            <button className='btnAdd' onClick={addToCart}>Agregar al carrito</button>
+            <button className='cardCounter__inner-btnAdd' onClick={addToCart}>Agregar al carrito</button>
         </div>
     )
 };
