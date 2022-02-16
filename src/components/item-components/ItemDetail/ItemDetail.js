@@ -1,17 +1,20 @@
-import react from "react";
+import React, { useContext }  from "react";
 import './ItemDetail.css';
-import ItemCount from "../../misce-components/ItemCount";
+import ItemCount from "../../misce-components/ItemCount/ItemCount";
 import { useState } from "react/cjs/react.development";
 import { Link } from "react-router-dom"; 
+import { CartContext } from '../../../context/CartContext';
 
 const ItemDetail = ( { item } ) =>{
     const [amount, setAmount] = useState();
+    const { putInTheCart, cart } = useContext(CartContext);
 
     
-    const onAddUnits = (amountToCart) => {
-        console.log(`Items agregados al carrito: ${amountToCart}`)
-        setAmount(amountToCart);
+    const onAddUnits = (units) => {
+        setAmount(units);
+        putInTheCart( units, item);
     }
+
 
     return(
         <div className="itemdetailcard">

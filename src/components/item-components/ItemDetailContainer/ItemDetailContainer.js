@@ -14,6 +14,8 @@ const ItemDetailContainer = ()=>{
             const filtro = res.find((item)=> item.id === parseInt(prodId));
             setProductSelected(filtro)
         })
+        .catch((err)=> console.log(err))
+        // .finally(()=>)
     }, [prodId]);
     
     

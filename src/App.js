@@ -3,15 +3,21 @@ import NavBar from './components/header/NavBar/NavBar';
 import ItemDetailContainer from './components/item-components/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './components/item-components/ItemListContainer/ItemListContainer';
 import { Routes, Route, Link } from 'react-router-dom';
+import CartListContainer from './components/misce-components/CartListContainer/CartListContainer';
+ 
 
 const App = ()=> {
 
 
+
   return (
-      <div>
+        <div>
+          
           <header>
             <NavBar />
           </header>
+
+
           <main className='main'>
             <Routes>
               <Route 
@@ -26,6 +32,10 @@ const App = ()=> {
               <Route 
               path='/producto/:prodId' 
               element={<ItemDetailContainer/>} />
+
+              <Route
+              path='/cart'
+              element={<CartListContainer/>} />
 
               <Route
               path='*'

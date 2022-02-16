@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import './ItemListContainer.css';
-import ItemCount from "../../misce-components/ItemCount";
 import getItems from "../../../api/catalogo";
 import ItemList from '../ItemList/ItemList'
 import { useParams } from "react-router-dom";
@@ -21,9 +20,8 @@ const ItemListContainer = ({ greeting }) => {
                 setCatalogue(categoyProducts);
             }  
         })
-        .finally(()=>{
-            setLoader(false)
-        })
+        .catch((err)=> console.log(err))
+        .finally(()=> setLoader(false))
     },[ prodCat ] )
 
 
