@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './CartWidget.css';
 import cartImg from '../../../assets/svgs/hr-Shop.svg';
-import { Link } from 'react-router-dom';
+import { CartContext } from '../../../context/CartContext';
 
 const CartWidget = () => { 
+    const { cart } = useContext(CartContext);
+
     return( 
     <div className='cart-container'>
             <img src={cartImg} className='cartImg' />
-            <p>4</p>
+            <div>
+            {
+                (cart.length > 0)
+                ? (<p>{cart.length}</p>)
+                : (null)
+            }
+            </div>
     </div>
     )
 };
