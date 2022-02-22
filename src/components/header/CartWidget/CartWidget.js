@@ -5,6 +5,7 @@ import { CartContext } from '../../../context/CartContext';
 
 const CartWidget = () => { 
     const { cart } = useContext(CartContext);
+    const prodsInCart = cart.reduce((acc, prod)=> (acc += prod.units), 0);
 
     return( 
     <div className='cart-container'>
@@ -12,7 +13,7 @@ const CartWidget = () => {
             <div>
             {
                 (cart.length > 0)
-                ? (<p>{cart.length}</p>)
+                ? (<p>{prodsInCart}</p>)
                 : (null)
             }
             </div>

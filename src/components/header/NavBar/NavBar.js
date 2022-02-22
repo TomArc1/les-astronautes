@@ -18,11 +18,6 @@ const NavBar = () =>{
                     <li className='menu__item'><NavLink to="/cart" className='menu__item-link'><CartWidget /></NavLink></li>
                 </ul>
             </nav>
-            {/* <div className='burguer'>
-                <div className='bar'></div>
-                <div className='bar'></div>
-                <div className='bar'></div>
-            </div> */}
         </header>
 
 

@@ -8,8 +8,8 @@ const CartDetail = ( {prod} ) =>{
 
     const removeToCart = () =>{
         if(units > 1){
-            deleteUnit(prod)
-            setUnits(units - 1)
+            deleteUnit(prod);
+            setUnits(units - 1);
         }else{
             deleteProduct(prod)
         }

@@ -11,8 +11,7 @@ const CartList = ({ cart }) =>{
                    return <CartDetail key={prod.id} prod={prod}></CartDetail>
                 })
             }
-            <button>Finalizar Compra</button>
-            <button onClick={emptyCart}>Mandar todo al diablo</button>
+            <button onClick={emptyCart}>Borrar todos los productos</button>
         </div>
     )
 };
