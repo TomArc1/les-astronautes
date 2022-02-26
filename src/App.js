@@ -1,10 +1,10 @@
 import './App.css';
 import NavBar from './components/header/NavBar/NavBar';
-import ItemDetailContainer from './components/item-components/ItemDetailContainer/ItemDetailContainer';
-import ItemListContainer from './components/item-components/ItemListContainer/ItemListContainer';
 import { Routes, Route, Link } from 'react-router-dom';
 import CartListContainer from './components/misce-components/CartListContainer/CartListContainer';
- 
+import ItemDetailContainer from './components/item-components/ItemDetailContainer/ItemDetailContainer';
+import ItemListContainer from './components/item-components/ItemListContainer/ItemListContainer';
+import PersonalDataContainer from './components/PersonalData-components/PersonalDataContainer/PersonalDataContainer';
 
 const App = ()=> {
 
@@ -36,6 +36,9 @@ const App = ()=> {
               <Route
               path='/cart'
               element={<CartListContainer/>} />
+              <Route
+              path='/personaldata'
+              element={<PersonalDataContainer/>} />
 
               <Route
               path='*'

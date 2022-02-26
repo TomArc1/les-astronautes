@@ -25,8 +25,10 @@ const CartListContainer = () =>{
                     }
             </div>
             <div className="cartListContainer__right">
-                    <ShowPrice /> 
-                    <button className={initBuyBtn}>Iniciar compra</button> 
+                    <ShowPrice />
+                    <Link to='/personaldata'>
+                    <button className={initBuyBtn}>Iniciar compra</button>     
+                    </Link> 
             </div>
         </div>
             
