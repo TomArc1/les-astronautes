@@ -17,23 +17,8 @@ const getItems = new Promise ((res, rej)=>{
 
 
 export const getItemsById = (id) =>{
-    let product
-    new Promise ((res, rej)=>{
-        const targetedItem = doc(db, 'catalogue', id );
-        getDoc(targetedItem)
-        .then((replica) =>{
-            if(replica.exists()){
-                product = ({ id: replica.id, ...replica.data()});
-                console.log(product)
-                res(product);
-                }
-            })
-        .catch((err)=>{
-            console.log(err);
-            rej(err);
-        })
-    })
-    // return product ??? 
+    const targetedItem = doc(db, 'catalogue', id );
+    return getDoc(targetedItem)
 };
 
 
