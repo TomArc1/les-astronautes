@@ -26,14 +26,15 @@
     border: none;
     background-color: blue;
     color: #e2e2e2;
+    cursor: pointer;
 }
 
 .initBuyBtnFalse{
+    pointer-events: none;
     width: 140px;
     height: 50px;
     padding: 15px;
     border: none;
     background-color: #999;
     color: #e2e2e2;
-    pointer-events: none;
 }

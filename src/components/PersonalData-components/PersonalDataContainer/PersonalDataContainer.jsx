@@ -1,34 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ContactForm from "../ContactForm/ContactForm";
-import PaymentMethodForm from "../PaymentMethodForm/PaymentMethodForm";
-import DestinyForm from "../DestinyForm/DestinyForm";
+import { CartContext } from "../../../context/CartContext";
+import CartListResume from "../../misce-components/CartListResume/CartListResume";
+import ShowPriceResume from "../../misce-components/ShowPriceResume/ShowPriceResume";
 
 const PersonalDataContainer = () =>{
-    const [steps, setSteps] = useState(1);
-
-    const walking = (a)=>{
-        setSteps(steps + a);
-    }
+    const { cart } = useContext(CartContext);
 
     return(
         <div>
-            {
-                steps === 1 
-                ? <ContactForm steps={walking}/>
-                : null
-            }
-            {
-                steps === 2
-                ? <DestinyForm steps={walking}/>
-                : null
-            }
-            {
-                steps === 3
-                ? <PaymentMethodForm steps={walking}/>
-                : null 
-            }
-
+            <div>
+                <h4>Resumen de la compra</h4>
+                <CartListResume cart={cart}/>
+                <ShowPriceResume/>
+            </div>
+            <div>
+                <ContactForm/>
+            </div>
         </div>
+
     )
 }
 

@@ -5,6 +5,9 @@ import CartListContainer from './components/misce-components/CartListContainer/C
 import ItemDetailContainer from './components/item-components/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './components/item-components/ItemListContainer/ItemListContainer';
 import PersonalDataContainer from './components/PersonalData-components/PersonalDataContainer/PersonalDataContainer';
+import CatalogueContainer from './components/catalogue/CatalogueContainer/CatalogueContainer';
+import NewItemContainer from './components/NewItemContainer/NewItemContainer';
+import EditItemContainer from './components/EditItemContainer/EditItemContainer';
 
 const App = ()=> {
 
@@ -17,30 +20,42 @@ const App = ()=> {
             <NavBar />
           </header>
 
-
           <main className='main'>
             <Routes>
               <Route 
               path='/' 
               element={ <ItemListContainer greeting = 'Vinos más allá de este mundo' /> } />
-
-              <Route
-              path='/category/:prodCat'
-              element={ <ItemListContainer greeting = 'Categoría en específico' /> } />
-
               
-              <Route 
+             <Route 
+              path='/shop' 
+              element={ <CatalogueContainer greeting = 'Vinos más allá de este mundo' /> } />
+              
+
+             <Route
+              path='/shop/:prodCat'
+              element={ <CatalogueContainer greeting = 'Categoría en específico' /> } />
+
+             <Route 
               path='/producto/:prodId' 
               element={<ItemDetailContainer/>} />
 
-              <Route
+             <Route
               path='/cart'
               element={<CartListContainer/>} />
-              <Route
+
+             <Route
               path='/personaldata'
               element={<PersonalDataContainer/>} />
 
               <Route
+              path='/newitemAdd'
+              element={<NewItemContainer/>} />
+
+              <Route
+              path='/item/edit/:id'
+              element={<EditItemContainer/>} />               
+
+             <Route
               path='*'
               element={
                 <div>

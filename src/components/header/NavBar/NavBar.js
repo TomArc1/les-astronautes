@@ -13,8 +13,8 @@ const NavBar = () =>{
             <nav>
                 <ul className='menu'>
                     <li className='menu__item'><NavLink to="/" className='menu__item-link'>Inicio</NavLink></li>
-                    <li className='menu__item'><NavLink to="/category/tinto" className='menu__item-link'>Tintos</NavLink></li>
-                    <li className='menu__item'><NavLink to="/category/blanco" className='menu__item-link'>Blancos</NavLink></li>
+                    <li className='menu__item'><NavLink to="/us" className='menu__item-link'>Nosotros</NavLink></li>
+                    <li className='menu__item'><NavLink to="/shop" className='menu__item-link'>Shop</NavLink></li>
                     <li className='menu__item'><NavLink to="/cart" className='menu__item-link'><CartWidget /></NavLink></li>
                 </ul>
             </nav>

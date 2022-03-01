@@ -27,7 +27,7 @@ const CartListContainer = () =>{
             <div className="cartListContainer__right">
                     <ShowPrice />
                     <Link to='/personaldata'>
-                    <button className={initBuyBtn}>Iniciar compra</button>     
+                    <button disabled={cart.length === 0} className={initBuyBtn}>Iniciar compra</button>     
                     </Link> 
             </div>
         </div>

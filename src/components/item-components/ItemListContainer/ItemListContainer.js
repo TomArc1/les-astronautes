@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import './ItemListContainer.css';
-import getItems from "../../../api/catalogo";
+import getItems from '../../../api/catalogo';
 import ItemList from '../ItemList/ItemList'
 import { useParams } from "react-router-dom";
+
 
 const ItemListContainer = ({ greeting }) => {
     const [catalogue, setCatalogue] = useState([]);
@@ -29,7 +30,12 @@ const ItemListContainer = ({ greeting }) => {
         <div>
             <p>{ greeting }</p>
             <div>
-                {(loader) ? (<h2>Cargando...</h2>) : (<ItemList items={catalogue}/>) }
+                {(loader) 
+                ? (<h2>Cargando...</h2>) 
+                : (
+                    <ItemList items={catalogue}/>
+                    ) 
+                }
             </div>
         </div>
     )
