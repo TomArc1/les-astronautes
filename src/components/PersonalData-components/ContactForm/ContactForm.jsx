@@ -2,7 +2,6 @@ import React,{ useState, useContext } from "react";
 import { addDoc, collection, doc } from "firebase/firestore";
 import { db } from '../../../firebase';
 import { CartContext } from "../../../context/CartContext";
-import { FirebaseError } from "firebase/app";
 
 
 const ContactForm =  () =>{
@@ -48,12 +47,20 @@ const ContactForm =  () =>{
 
 
     const finishForm = () =>{
-        if(![email, name, lastname,dni,area,tel,province,city,CP,street,streetNumber,floor].some(field => field === "")){
+        if(![email, name, lastname,dni,area,tel,province,city,CP,street,streetNumber].some(field => field === "")){
 
             const clientData = collection(db, "orders");
+            const orderTime = new Date();
+            const orderProducts = cart.map((prod)=>{
+                return{
+                    name: prod.name,
+                    units: prod.units
+                }
+            })
 
             const newOrder = {
-                ...cart, 
+                order: orderProducts, 
+                client:{ 
                 email,
                 name,
                 lastname,
@@ -65,8 +72,8 @@ const ContactForm =  () =>{
                 CP,
                 street,
                 streetNumber,
-                floor,
-                date: (+ new Date()).toString(36),
+                floor},
+                date: orderTime,
                 totalPrice: amount
             }
 
