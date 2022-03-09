@@ -1,4 +1,64 @@
+.cardItem{
+    width: 243px;
+    height: 389px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #3a3a3d;
+}
+
+.card-link{
+    text-decoration: none;
+}
+
+.cardItem-img-c{
+    width: 203px;
+    height: 183px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
 .cardItem-img{
-    width: 200px;
-    height: 250px;
+    width: 168px;
+    height: 168px;
+}
+
+.cardItem-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    color: #fff;
+}
+
+.cardItem-info__h3{
+    font-family: 'Pangolin';
+    font-size: 20px;
+    line-height: 24px;
+
+}
+.cardItem-info__p1{
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 20px;
+}
+.cardItem-info__p2{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+.cardItem-info__btn{
+    width: 203px;
+    height: 40px;
+    border: 1px solid #d7cf07;
+    border-radius: 12px;
+    background-color: transparent;
+    color: #d7cf07;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
 }

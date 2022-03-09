@@ -1,0 +1,33 @@
+.loaderWrapper{
+    width: 100%;
+    height: 100vh;
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    background-color: #1E1E24;
+}
+
+.loaderInner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loaderInner__h1{
+    color: #fff;
+    margin-bottom: 70px;
+}
+
+.loaderInner__img{
+    width: 300px;
+    animation: moonLoader 15s infinite;
+}
+
+@keyframes moonLoader {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(740deg);
+    }
+}

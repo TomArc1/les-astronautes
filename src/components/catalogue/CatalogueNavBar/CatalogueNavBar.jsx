@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './catalogueNavBar.css'
 import { Link, NavLink } from "react-router-dom";
 
 const CatalogueNavBar = () =>{
@@ -10,8 +11,8 @@ const CatalogueNavBar = () =>{
     const quitFontBold = () => setBold(false);
 
     return(
-        <div>
-            <ul>
+        <div className="catalogueNavBar">
+            <ul className="catalogueNavBar__ul">
                 <li><Link to="/shop" onClick={fontBold} className={fontType}>Todo</Link></li>
                 <li><NavLink to="/shop/tinto" onClick={quitFontBold} className='menu__item-link'>Tintos</NavLink></li>
                 <li><NavLink to="/shop/blanco" onClick={quitFontBold} className='menu__item-link'>Blancos</NavLink></li>

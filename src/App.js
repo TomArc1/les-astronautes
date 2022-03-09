@@ -8,6 +8,10 @@ import PersonalDataContainer from './components/PersonalData-components/Personal
 import CatalogueContainer from './components/catalogue/CatalogueContainer/CatalogueContainer';
 import NewItemContainer from './components/NewItemContainer/NewItemContainer';
 import EditItemContainer from './components/EditItemContainer/EditItemContainer';
+import Home from './components/main/home/Home';
+import Us from './components/main/Us/Us';
+import Error404 from './components/main/Error404/Error404';
+import Loader from './components/misce-components/Loader/Loader';
 
 const App = ()=> {
 
@@ -24,16 +28,24 @@ const App = ()=> {
             <Routes>
               <Route 
               path='/' 
-              element={ <ItemListContainer greeting = 'Vinos más allá de este mundo' /> } />
+              element={ <Home /> } />
+
+              <Route 
+              path='/us' 
+              element={ <Us/> } />
               
+              <Route 
+              path='/loader' 
+              element={ <Loader/> } />
+
              <Route 
               path='/shop' 
-              element={ <CatalogueContainer greeting = 'Vinos más allá de este mundo' /> } />
+              element={ <CatalogueContainer /> } />
               
 
              <Route
               path='/shop/:prodCat'
-              element={ <CatalogueContainer greeting = 'Categoría en específico' /> } />
+              element={ <CatalogueContainer /> } />
 
              <Route 
               path='/producto/:prodId' 
@@ -57,12 +69,7 @@ const App = ()=> {
 
              <Route
               path='*'
-              element={
-                <div>
-                  <h1>Huston... tenemos un problema. Acá no hay nada!</h1>
-                  <Link to={'/'}> Volver a la tierra</Link>
-                </div>
-              }/>
+              element={<Error404 />}/>
 
             </Routes>
           </main>

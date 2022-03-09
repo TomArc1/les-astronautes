@@ -1,6 +1,6 @@
 import React from 'react';
 import './NavBar.css';
-import logoprovisional from '../../../assets/imgs/logoprovisional.jpeg';
+import logo from '../../../assets/imgs/logo.png';
 import CartWidget from '../CartWidget/CartWidget';
 import { Link, NavLink } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ const NavBar = () =>{
     return (
         <header className='header'>
             <Link to="/">
-                <img src={logoprovisional} className='logoprovisional' alt='Les Astronautes' />
+                <img src={logo} className='logo' alt='Les Astronautes' />
             </Link>
             <nav>
                 <ul className='menu'>

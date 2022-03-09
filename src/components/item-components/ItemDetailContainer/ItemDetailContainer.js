@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from "react";
 import './ItemDetailContainer.css';
-import ItemDetail from '../ItemDetail/ItemDetail';
+import { useParams, Link } from "react-router-dom";
 import { getItemsById } from '../../../api/catalogo';
-import { useParams } from "react-router-dom";
+import ItemDetail from '../ItemDetail/ItemDetail';
+import Loader from '../../misce-components/Loader/Loader';
+import arrow from '../../../assets/svgs/arrow.svg';
+
 
 const ItemDetailContainer = ()=>{
     const [productSelected, setProductSelected] = useState('');
@@ -25,12 +28,22 @@ const ItemDetailContainer = ()=>{
     }, [prodId]);
     
     return(
-        <div>
+        <>
             {
-                (loader) ? <ItemDetail item={productSelected}/> : <h1>Cargando...</h1>
+                (!loader) 
+                ? < Loader /> 
+                : 
+                <div className="itemDetailContainer-Wrapper">
+                    <div className="itemDetailContainer-Inner">
+                        <Link to='/' className="itemDetailContainer-Inner__linkShop" >
+                            <img src={arrow} className="itemDetailContainer-Inner__linkShop-img" />
+                            <p className="itemDetailContainer-Inner__linkShop-p">Shop</p>
+                        </Link>
+                        <ItemDetail item={productSelected}/>
+                    </div>
+                </div>   
             }
-            
-        </div>
+        </>
 
     )
 }

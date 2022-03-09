@@ -1,0 +1,82 @@
+.usWrapper{
+    width: 100%;
+    height: 100vh;
+    padding-top: 50px;
+    background-color: #1E1E24;
+    display: flex;
+    justify-content: center;
+}
+
+.usInner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.usInner-h1, .usInner-p{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+.usInner-ovni{
+    width: 32px;
+    margin-bottom: 50px;
+    animation: moveOvni 10s infinite ease-in-out;
+}
+
+@keyframes moveOvni {
+    0%{
+        transform: translateX(-300px);
+    }
+    30%, 50%, 70%{
+        transform: translateY(10px) ;
+    }
+    20%, 40%, 60%, 80%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateX(300px);
+    }
+}
+
+
+.usInner-astros{
+    width: 340px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.usInner-astro-1, .usInner-astro-2{
+    width: 128px;
+}
+
+.usInner-astro-1{
+    animation: move1 3s infinite ease-in-out;
+}
+
+@keyframes move1 {
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+}
+
+
+.usInner-astro-2{
+    animation: move1 2.5s infinite ease-in-out;
+    transform: scaleX(-1);
+}
+
+@keyframes move2 {
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+}

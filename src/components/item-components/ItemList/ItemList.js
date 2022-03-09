@@ -5,7 +5,7 @@ import Item from '../Item/Item';
 
 const ItemList = ( {items} ) =>{
     return(
-        <div className="lista">
+        <div className="catalogue-list">
             {items.map((item)=>{
                return <Item key={item.id} item={item}/>
             })}

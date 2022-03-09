@@ -13,7 +13,7 @@ const CartWidget = () => {
             <div>
             {
                 (cart.length > 0)
-                ? (<p>{prodsInCart}</p>)
+                ? (<p className='cartWidP'>{prodsInCart}</p>)
                 : (null)
             }
             </div>

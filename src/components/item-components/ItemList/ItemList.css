@@ -1,6 +1,7 @@
-.lista{
-    padding: 40px 100px;
+.catalogue-list{
+    padding: 0 80px 132px 120px;
     display: grid;
-    grid-template-columns: repeat(3, 300px);
+    grid-template-columns: repeat(4, 243px);
     grid-gap: 20px;
+    background-color: #1e1e24;
 }

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import './ItemListContainer.css';
 import getItems from '../../../api/catalogo';
-import ItemList from '../ItemList/ItemList'
+import ItemList from '../ItemList/ItemList';
+import Loader from "../../misce-components/Loader/Loader";
 import { useParams } from "react-router-dom";
 
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
     const [catalogue, setCatalogue] = useState([]);
     const [loader, setLoader] = useState(true);
     const { prodCat } = useParams()
@@ -28,10 +29,9 @@ const ItemListContainer = ({ greeting }) => {
 
     return(
         <div>
-            <p>{ greeting }</p>
             <div>
                 {(loader) 
-                ? (<h2>Cargando...</h2>) 
+                ? (< Loader />) 
                 : (
                     <ItemList items={catalogue}/>
                     ) 

@@ -1,35 +1,49 @@
 .cardCounter{
-    width: 250px;
-    padding: 10px;
-    border: 1px solid black;
+    width: 400px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
 }
-
 
 .cardCounter__inner{
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
-}
-
-.cardProduct__inner-input{
-    width: 30px;
-    height: 25px;
-    text-align: center;
-    margin: 0 10px 0 10px;
 }
 
 .cardCounter__inner-btn{
-    width: 25px;
-    height: 25px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-color: transparent;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+}
+
+.cardProduct__inner-input{
+    width: 48px;
+    height: 48px;
+    padding: 12px 8px;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    background: transparent;
+    color: #fff;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
 }
 
 .cardCounter__inner-btnAdd{
-    padding: 5px;
+    width: 256px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 6px;
+    background-color: #D7CF07;
+
+}
+
+.cardCounter__inner-btnAdd-p{
+    font-size: 16px;
+    font-weight: 600;
 }
