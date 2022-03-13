@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import './ItemListContainer.css';
-import getItems from '../../../api/catalogo';
+import getItems from '../../../../api/catalogo';
 import ItemList from '../ItemList/ItemList';
-import Loader from "../../misce-components/Loader/Loader";
+import Loader from "../../../misce-components/Loader/Loader";
 import { useParams } from "react-router-dom";
 
 

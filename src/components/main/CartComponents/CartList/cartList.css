@@ -1,0 +1,15 @@
+.cartList{
+   margin-top: 50px;
+   margin-left: 50px;
+}
+
+.cartListDeleteAll{
+    width: 256px;
+    height: 48px;
+    background-color: #d7cf07;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 50px;
+}

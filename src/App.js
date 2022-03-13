@@ -1,10 +1,9 @@
 import './App.css';
 import NavBar from './components/header/NavBar/NavBar';
-import { Routes, Route, Link } from 'react-router-dom';
-import CartListContainer from './components/misce-components/CartListContainer/CartListContainer';
-import ItemDetailContainer from './components/item-components/ItemDetailContainer/ItemDetailContainer';
-import ItemListContainer from './components/item-components/ItemListContainer/ItemListContainer';
-import PersonalDataContainer from './components/PersonalData-components/PersonalDataContainer/PersonalDataContainer';
+import { Routes, Route } from 'react-router-dom';
+import CartListContainer from './components/main/CartComponents/CartListContainer/CartListContainer';
+import ItemDetailContainer from './components/main/ItemComponents/ItemDetailContainer/ItemDetailContainer';
+import PersonalDataContainer from './components/main/PersonalData-components/PersonalDataContainer/PersonalDataContainer';
 import CatalogueContainer from './components/catalogue/CatalogueContainer/CatalogueContainer';
 import NewItemContainer from './components/NewItemContainer/NewItemContainer';
 import EditItemContainer from './components/EditItemContainer/EditItemContainer';

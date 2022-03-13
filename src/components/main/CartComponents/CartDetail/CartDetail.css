@@ -1,0 +1,31 @@
+.cartDetailCard{
+    width: 750px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 8px;
+}
+
+.cartDetailCard-left-h3{
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.cartDetailCard-left-p, .cartDetailCard-right-desc,
+.cartDetailCard-right-units, .cartDetailCard-right-price{
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.cartDetailCard-right-btn{
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: transparent;
+    height: 35px;
+}
+
+.cartDetailCard-right-btnImg{
+    width: 24px;
+}

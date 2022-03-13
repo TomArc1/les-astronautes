@@ -2,13 +2,13 @@ import React, { useContext }  from "react";
 import './ItemDetail.css';
 import { useState } from "react/cjs/react.development";
 import { Link } from "react-router-dom"; 
-import { CartContext } from '../../../context/CartContext';
-import ItemCount from "../../misce-components/ItemCount/ItemCount";
-import starsGroup from '../../../assets/imgs/starsGroup.png';
+import { CartContext } from '../../../../context/CartContext';
+import ItemCount from "../../../misce-components/ItemCount/ItemCount";
+import starsGroup from '../../../../assets/imgs/starsGroup.png';
 
 const ItemDetail = ( { item } ) =>{
     const [amount, setAmount] = useState();
-    const { putInTheCart, cart } = useContext(CartContext);
+    const { putInTheCart } = useContext(CartContext);
 
     
     const onAddUnits = (units) => {
@@ -20,8 +20,8 @@ const ItemDetail = ( { item } ) =>{
     return(
         <div className="itemdetailcard">
             <div className="itemdetail__img-c">
-                <img src={item.img} className="imgdetail"/>
-                <img src={starsGroup} className="imgdetail-stars" />
+                <img src={item.img} alt='Les Astronautes' className="imgdetail"/>
+                <img src={starsGroup} alt='Les Astronautes' className="imgdetail-stars" />
             </div>
             <div className="itemdetail__info">
                 <h1 className="itemdetail__info-h1">{item.name}</h1>

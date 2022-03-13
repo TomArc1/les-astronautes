@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { CartContext } from "../../../context/CartContext";
+import React from "react";
 import CartDetailResume from "../CartDetailResume/CartDetailResume";
 
 const CartListResume = ({ cart }) =>{

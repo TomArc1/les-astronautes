@@ -7,7 +7,7 @@ const Item = ({ item }) =>{
         <div className="cardItem">
             <Link to={`/producto/${item.id}`} className="card-link" >
                 <div className="cardItem-img-c">
-                    <img src={item.img} className="cardItem-img" />
+                    <img src={item.img} alt='Les Astronautes' className="cardItem-img" />
                 </div>
                 <div className="cardItem-info">
                     <h3 className="cardItem-info__h3">{item.name}</h3>

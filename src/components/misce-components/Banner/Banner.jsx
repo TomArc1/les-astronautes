@@ -12,7 +12,7 @@ const Banner = () =>{
     return(
         <div className="banner">
             <div className="bannerLeft">
-                <div lassName="bannerLeft__inner">
+                <div className="bannerLeft__inner">
                     <img src={astroBanner} alt='Les Astronautes' className="bannerLeft__inner-astro"/>
                     <img src={wineBanner} alt='Les Astronautes' className="bannerLeft__inner-wine"/>
                 </div>

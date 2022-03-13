@@ -1,7 +1,8 @@
 import React,{ useState, useContext } from "react";
-import { addDoc, collection, doc } from "firebase/firestore";
-import { db } from '../../../firebase';
-import { CartContext } from "../../../context/CartContext";
+import './contactForm.css';
+import { addDoc, collection } from "firebase/firestore";
+import { db } from '../../../../firebase';
+import { CartContext } from "../../../../context/CartContext";
 
 
 const ContactForm =  () =>{
@@ -102,7 +103,7 @@ const ContactForm =  () =>{
     return(
 
 
-        <div>
+        <div className="contactForm-wrapper">
             {
                 (alreadyBuyIt)
                 ? ( <div>
@@ -112,27 +113,43 @@ const ContactForm =  () =>{
                     </div>)
                 : 
                 <form onSubmit={ready}>
-                    <input type='email' value={email} onChange={clientEmail} placeholder="email"/>
-                    <input type='text' value={name} onChange={clientName} placeholder="nombre"/>
-                    <input type='text' value={lastname} onChange={clientLastname} placeholder="apellido"/>
-                    <input type='text' value={dni} onChange={clientDni} placeholder="dni"/>
-                    <input type='text' value={area} onChange={clientArea} placeholder="area"/>
-                    <input type='text' value={tel} onChange={clientTel} placeholder="teléfono"/>
-                    <input type='text' value={province} onChange={clientProvince} placeholder="Provincia"/>
-                    <input type='text' value={city} onChange={clientCity} placeholder="Ciudad"/>
-                    <input type='text' value={CP} onChange={clientCP} placeholder="Código postal"/>
-                    <input type='text' value={street} onChange={clientStreet} placeholder="Calle"/>
-                    <input type='text' value={streetNumber} onChange={clientStreetNumber} placeholder="Altura"/>
-                    <input type='text' value={floor} onChange={clientFloor} placeholder="Piso"/>
-                    <span>Debito</span>
-                    <input type="radio" name="card" />
-                    <span>Crédito</span>
-                    <input type="radio" name="card" />
-                    <input type='text' value={cardNumber} onChange={clientCardNumber} placeholder="Numero de la tarjeta"/>
-                    <input type='text' value={expiration} onChange={clientExpiration} placeholder="vencimiento"/>
-                    <input type='text' value={owner} onChange={clientOwner} placeholder="titular"/>
-                    <input type='text' value={securityNumber} onChange={clientSecurityNumber} placeholder="Numero de seguridad"/>
-                    <button type="submit">Finalizar Comprar</button>
+                    <h3 className="form-h3">Datos personales</h3>
+                    <div className="formPersonalData">
+                        <input type='email' value={email} onChange={clientEmail} placeholder="email" className="form-input"/>
+                        <input type='email' value={email} onChange={clientEmail} placeholder="repetir email" className="form-input"/>
+                        <input type='text' value={name} onChange={clientName} placeholder="nombre/s" className="form-input"/>
+                        <input type='text' value={lastname} onChange={clientLastname} placeholder="apellido" className="form-input"/>
+                        <input type='text' value={dni} onChange={clientDni} placeholder="dni" className="form-input"/>
+                        <input type='text' value={area} onChange={clientArea} placeholder="area" className="form-input"/>
+                        <input type='text' value={tel} onChange={clientTel} placeholder="teléfono" className="form-input"/>
+                    </div>
+                    <h3 className="form-h3">Datos de destino</h3>
+                    <div className="formDestinyData">
+                        <input type='text' value={province} onChange={clientProvince} placeholder="Provincia" className="form-input"/>
+                        <input type='text' value={city} onChange={clientCity} placeholder="Ciudad" className="form-input"/>
+                        <input type='text' value={CP} onChange={clientCP} placeholder="Código postal" className="form-input"/>
+                        <input type='text' value={street} onChange={clientStreet} placeholder="Calle" className="form-input"/>
+                        <input type='text' value={streetNumber} onChange={clientStreetNumber} placeholder="Altura" className="form-input"/>
+                        <input type='text' value={floor} onChange={clientFloor} placeholder="Piso" className="form-input"/>
+                    </div>
+                    <h3 className="form-h3">Forma de Pago</h3>
+                    <div className="formPayment">
+                        <div className="bankCards">
+                            <div className="debit">
+                                <span className="debit-span">Debito</span>
+                                <input type="radio" name="card" className="debit-input" />
+                            </div>
+                            <div className="credit">
+                                <span className="credit-span">Crédito</span>
+                                <input type="radio" name="card" className="credit-input" />
+                            </div>
+                        </div>
+                        <input type='text' value={cardNumber} onChange={clientCardNumber} placeholder="Numero de la tarjeta" className="form-input"/>
+                        <input type='text' value={expiration} onChange={clientExpiration} placeholder="vencimiento" className="form-input"/>
+                        <input type='text' value={owner} onChange={clientOwner} placeholder="titular" className="form-input"/>
+                        <input type='text' value={securityNumber} onChange={clientSecurityNumber} placeholder="Numero de seguridad" className="form-input"/>
+                    </div>
+                    <button type="submit" className="finishBuyBtn">Finalizar Compra</button>
                 </form>
             }
         </div>
