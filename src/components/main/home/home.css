@@ -91,6 +91,17 @@
 .moonGroup-moon{
     position: absolute;
     bottom: 0;
+    animation: moonGroup-moon 5s ease-in-out infinite;
+
+}
+
+@keyframes moonGroup-moon{
+    0%, 100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: .3;
+    }
 }
 
 
@@ -467,10 +478,10 @@
 
 @keyframes Card2-star2 {
     0%,100%{
-        transform: rotate(0) translateY(0);
+        transform: rotate(-30deg) translateY(5px);
     }
     50%{
-        transform: rotate(-10deg) translateY(-30px);
+        transform: rotate(-10deg) translateY(-25px);
     }
 }
 

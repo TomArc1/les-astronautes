@@ -1,17 +1,27 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 export const CartContext = createContext([]);
 
 const CartContextProvider = ({ children }) =>{
-    const [cart, setCart] = useState([])
-    const [amount, setAmount] = useState(0);
+    const [amount, setAmount] = useState(()=>{
+        const storageData = localStorage.getItem('selectedItemsInCart');
+        return storageData ? JSON.parse(storageData).reduce((acc, prod)=> (acc += (prod.price*prod.units)), 0) : [];
+    })
+
+    const [cart, setCart] = useState(()=>{
+        const storageData = localStorage.getItem('selectedItemsInCart');
+        return storageData ? JSON.parse(storageData) : [];
+    })
+
+    useEffect(()=>{
+        window.localStorage.setItem('selectedItemsInCart', JSON.stringify(cart))
+    }, [cart])
+
 
     const totalPrice = ( cart ) =>{
         let value = cart.reduce((acc, prod)=> (acc += (prod.price*prod.units)), 0);
-        console.log(value)
         return setAmount(value) 
     }
-
 
     const putInTheCart = (units, item) =>{
         const check = cart.find((prod)=> prod.name === item.name)
@@ -28,7 +38,11 @@ const CartContextProvider = ({ children }) =>{
     }
 
 
-    const emptyCart = () =>{setCart([]);}
+    const emptyCart = () =>{
+        setCart([]);
+        setAmount(0);
+        localStorage.removeItem('selectedItemsInCart')
+    }
 
     
     const deleteProduct = (prod) =>{

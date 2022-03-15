@@ -6,6 +6,7 @@ import CartList from "../CartList/CartList";
 import ShowPrice from "../../../misce-components/ShowPrice/ShowPrice";
 import Footer from "../../../Footer/Footer";
 import spaceStation from '../../../../assets/imgs/space-station.png';
+import starsGroupWhite from '../../../../assets/imgs/starsGroupWhite.png';
 
 const CartListContainer = () =>{
     const { cart } = useContext(CartContext);
@@ -29,10 +30,14 @@ const CartListContainer = () =>{
                         }
                 </div>
                 <div className="cartListContainer__right">
+                        <img src={starsGroupWhite} alt="Les Astronautes" className="cartListContainer__right-img" />
                         <ShowPrice />
                         <Link className={initBuyBtn} to='/personaldata'>
                             <span className="btn-example">Iniciar compra</span> 
-                        </Link> 
+                        </Link>
+                        <div className="cartListContainer__right-div-p" >
+                            <p>Tenemos envío a todo el país... <br/> Sin Cargo!</p>
+                        </div>
                 </div>
             </div>
             <Footer/>

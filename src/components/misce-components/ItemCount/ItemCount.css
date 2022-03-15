@@ -4,8 +4,11 @@
 }
 
 .cardCounter__inner{
+    width: 134px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    margin-right: 30px;
 }
 
 .cardCounter__inner-btn{
@@ -40,7 +43,10 @@
     border: none;
     border-radius: 6px;
     background-color: #D7CF07;
+}
 
+.cardCounter__inner-btnAdd-cartImg{
+    width: 20px;
 }
 
 .cardCounter__inner-btnAdd-p{

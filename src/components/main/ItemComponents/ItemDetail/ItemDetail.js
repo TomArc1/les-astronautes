@@ -30,7 +30,7 @@ const ItemDetail = ( { item } ) =>{
                 <p className="itemdetail__info-p3">{item.description2}</p>
                 {
                     (!amount) ?
-                    <ItemCount stock={5} initial={1} onAdd={onAddUnits} />
+                    <ItemCount stock={20} initial={1} onAdd={onAddUnits} />
                     :   
                     <Link to="/cart" className="goToCart">
                         <div className="goToCart-div">

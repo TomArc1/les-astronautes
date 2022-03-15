@@ -48,5 +48,15 @@
     background-color: #d7cf07;
     font-weight: bold;
     margin-bottom: 40px;
+}
 
+.hiddenSpanWarningForm{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.showSpanWarningForm{
+    font-size: 10px;
+    visibility: visible;
+    opacity: 1;
 }
